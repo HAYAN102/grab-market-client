@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import axions from "axios";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
@@ -54,6 +53,7 @@ function MainPage() {
         {products.map(function (product, index) {
           return (
             <div className="product-card">
+              {product.soldout === 1 && <div className="product-blur" />}
               <Link className="product-link" to={`/products/${product.id}`}>
                 <div>
                   <img
